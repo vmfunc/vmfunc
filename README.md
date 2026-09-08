@@ -23,4 +23,4 @@
 
 if you'd like to support me, and the work/research i publish for free on the internet, you can do so below. every little bit counts <3
 
-↝ https://ko-fi.com/vmfunc
+↝ https://ko-fi.com/celeste2
