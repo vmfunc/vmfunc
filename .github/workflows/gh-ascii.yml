@@ -1,0 +1,45 @@
+name: Update gh-ascii card
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-ascii-card
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch cards
+        run: |
+          set -euo pipefail
+          for theme in dark light; do
+            curl -fsSL --retry 3 --max-time 60 \
+              "https://gh.crafter.run/vmfunc?theme=${theme}&cols=140" -o "/tmp/${theme}_mode.svg"
+            # only accept a real SVG with no active content
+            head -c 200 "/tmp/${theme}_mode.svg" | grep -q '<svg' || { echo "${theme}: not an SVG"; exit 1; }
+            if grep -qiE '<script|<foreignObject|[[:space:]]on[a-z]+="' "/tmp/${theme}_mode.svg"; then
+              echo "${theme}: unexpected active content"; exit 1
+            fi
+            mv "/tmp/${theme}_mode.svg" "${theme}_mode.svg"
+          done
+
+      - name: Commit if changed
+        run: |
+          git add dark_mode.svg light_mode.svg
+          if git diff --cached --quiet; then
+            echo "no changes"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh gh-ascii profile card"
+          git push
