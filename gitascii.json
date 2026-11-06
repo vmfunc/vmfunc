@@ -16,7 +16,7 @@
       "locked": false,
       "visible": true,
       "zIndex": 1,
-      "instanceId": "widget_1793985120005_0"
+      "instanceId": "widget_1793985809822_0"
     },
     {
       "widgetId": "ascii-art",
@@ -31664,12 +31664,13 @@
             "#fcfefd",
             "#fcfefd"
           ]
-        ]
+        ],
+        "invert": false
       },
       "locked": false,
       "visible": true,
       "zIndex": 2,
-      "instanceId": "widget_1793985120005_1"
+      "instanceId": "widget_1793985809822_1"
     },
     {
       "widgetId": "terminal-info",
@@ -31686,58 +31687,7 @@
       "locked": false,
       "visible": true,
       "zIndex": 3,
-      "instanceId": "widget_1793985120005_2"
-    },
-    {
-      "instanceId": "widget_5043a779-22e3-4f11-b5a9-14f1ecac9d3e",
-      "widgetId": "contribution-snake",
-      "name": "Contribution-snake Widget",
-      "position": {
-        "x": 0,
-        "y": 402
-      },
-      "size": {
-        "width": 800,
-        "height": 250
-      },
-      "config": {},
-      "locked": false,
-      "visible": true,
-      "zIndex": 5
-    },
-    {
-      "instanceId": "widget_cb085ac0-0dc1-4b1b-8902-cff7af0da212",
-      "widgetId": "social-media",
-      "name": "Social-media Widget",
-      "position": {
-        "x": 0,
-        "y": 668
-      },
-      "size": {
-        "width": 800,
-        "height": 120
-      },
-      "config": {
-        "selectedSocials": [
-          "twitter",
-          "email",
-          "bluesky",
-          "mastodon",
-          "website",
-          "github"
-        ],
-        "socialUrls": {
-          "github": "https://github.com/vmfunc",
-          "twitter": "https://x.com/vmfunc",
-          "mastodon": "https://defcon.social/@vmfunc",
-          "bluesky": "https://bsky.app/profile/vmfunc.re",
-          "website": "https://vmfunc.re",
-          "email": "mailto:celeste@linux.com"
-        }
-      },
-      "locked": false,
-      "visible": true,
-      "zIndex": 5
+      "instanceId": "widget_1793985809822_2"
     }
   ],
   "globalStyles": {
@@ -31754,7 +31704,7 @@
   "templateId": "native",
   "profileSlug": "default",
   "metadata": {
-    "revision": "rev_1793985715110_xmss6",
-    "updatedAt": "2026-11-06T17:22:00.987Z"
+    "revision": "rev_1793985825589_cjrlu",
+    "updatedAt": "2026-11-06T17:23:51.855Z"
   }
 }
